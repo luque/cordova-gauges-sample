@@ -1,0 +1,47 @@
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+	var rpmChart = AmCharts.makeChart("rpm-gauge", {
+	    "type": "gauge",
+	    "theme": "light",    
+	    "axes": [{
+		"axisThickness":1,
+		"axisAlpha":0.2,
+		"tickAlpha":0.2,
+		"valueInterval":20,
+		"bands": [{
+		    "color": "#84b761",
+		    "endValue": 3000,
+		    "startValue": 0
+		}, {
+		    "color": "#fdd400",
+		    "endValue": 5000,
+		    "startValue": 3000
+		}, {
+		    "color": "#cc4748",
+		    "endValue": 6000,
+		    "innerRadius": "95%",
+		    "startValue": 5000
+		}],
+		"bottomText": "0 rpm",
+		"bottomTextYOffset": -20,
+		"endValue": 6000
+	    }],
+	    "arrows": [{}]
+	});
+    }
+};

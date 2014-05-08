@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gauges</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+	<style>
+	    #rpm-gauge {
+	        width: 100%;
+	    }
+	</style>
+    </head>
+    <body>
+        <div id="dashboard" data-role="page">
+	    <div data-role="header">
+	        <h1>Dashboard</h1>
+	    </div>
+	    <div role="main" class="ui-content">
+	        <div id="rpm-gauge"/>
+	    </div>
+	    <div data-role="footer" data-position="fixed">
+	        <div data-role="navbar">
+		    <ul>
+		        <li><a href="#dashboard" data-icon="clock" class="ui-btn-active">Dashboard</a></li>
+		        <li><a href="#config" data-icon="gear">Config</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+
+        <div id="config" data-role="page">
+	    <div data-role="header">
+	        <h1>Config</h1>
+	    </div>
+	    <div role="main" class="ui-content">
+	        <form>
+		    <label for="rpm">Engine RPM:</label>
+		    <input type="range" name="rpm" id="rpm" min="0" max="6000" value="1500">
+		</form>
+	    </div>
+	    <div data-role="footer" data-position="fixed">
+	        <div data-role="navbar">
+		    <ul>
+		        <li><a href="#dashboard" data-icon="clock">Dashboard</a></li>
+		        <li><a href="#config" data-icon="gear" class="ui-btn-active">Config</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+
+	<script type="text/javascript" src="js/amcharts.js"></script>
+	<script type="text/javascript" src="js/gauge.js"></script>
+	<script type="text/javascript" src="js/themes/light.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
